@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+<button id="shareButton">Поделиться</button>
+<script>
+    document.getElementById('shareButton').addEventListener('click', async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: 'Virtual Fit',
+                    text: 'Попробуй примерить одежду онлайн!',
+                    url: 'https://dvvtech.github.io/virtual-fit/'
+                });
+                console.log('Контент успешно поделён!');
+            } catch (error) {
+                console.error('Ошибка при попытке поделиться:', error);
+            }
+        } else {
+            alert('Ваш браузер не поддерживает Web Share API');
+        }
+    });
+</script>
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +53,7 @@
     </header>
 
     <main class="container mx-auto px-4 sm:px-6 py-12">
-        <!-- Главная -->
+        
         <section id="home" class="py-12 bg-gray-50">            
 				<h2 class="text-2xl md:text-3xl font-bold text-center text-purple-600 mb-8">Добро пожаловать в Альтернативную Психологию</h2>                
 				<p class="text-base md:text-lg text-center text-gray-700">Мы помогаем вам раскрыть личностный потенциал и обрести гармонию.</p>            
@@ -104,3 +124,4 @@
     </script>
 </body>
 </html>
+-->
