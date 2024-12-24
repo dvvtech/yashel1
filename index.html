@@ -1,24 +1,4 @@
-<button id="shareButton">Поделиться</button>
-<script>
-    document.getElementById('shareButton').addEventListener('click', async () => {
-        if (navigator.share) {
-            try {
-                await navigator.share({
-                    title: 'Virtual Fit',
-                    text: 'Попробуй примерить одежду онлайн!',
-                    url: 'https://dvvtech.github.io/virtual-fit/'
-                });
-                console.log('Контент успешно поделён!');
-            } catch (error) {
-                console.error('Ошибка при попытке поделиться:', error);
-            }
-        } else {
-            alert('Ваш браузер не поддерживает Web Share API');
-        }
-    });
-</script>
-
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -124,4 +104,3 @@
     </script>
 </body>
 </html>
--->
